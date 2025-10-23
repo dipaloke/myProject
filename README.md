@@ -1,1 +1,2 @@
-This is a Python Django practice project
+# Python Django practice project
+
