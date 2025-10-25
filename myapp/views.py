@@ -6,3 +6,5 @@ def home(req):
     return render(req,"home.html")
 def music(request):
     return HttpResponse("Welcome to the Music App!")
+def welcome(req):
+    return render(req, "welcome.html")
