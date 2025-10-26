@@ -1,1 +1,30 @@
-body {background-color: blanchedalmond;}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    color: var(--text);
+    background: #f7f9fb;
+  }
+
+
+/* trigger button*/
+
+button {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 100px 16px;
+    background: var(--green-700);
+    color: #fff; border: none; border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(22, 101, 52, .25);
+    cursor: pointer; transition: transform .08s ease, box-shadow .2s ease;
+    margin: 0 auto; display: block;
+  }
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: translateY(0);
+}

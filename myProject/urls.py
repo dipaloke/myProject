@@ -21,6 +21,7 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name="home"),
+    path('employee_form/',views.employee_form, name="employee_form"),
     path('music/',views.music, name="music"),
     path('welcome/',views.welcome, name="welcome"),
     path('json/',views.josn_view, name="json_view"),
