@@ -24,6 +24,7 @@ urlpatterns = [
     path('music/',views.music, name="music"),
     path('welcome/',views.welcome, name="welcome"),
     path('json/',views.josn_view, name="json_view"),
+    path('extended_json/',views.extended_josn_view, name="extended_json_view"),
 
 
     ]
