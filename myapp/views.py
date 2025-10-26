@@ -4,6 +4,8 @@ from django.http import HttpResponse, JsonResponse
 # Create your views here.
 def home(req):
     return render(req,"home.html")
+def employee_form(req):
+    return render(req,"employee_form.html")
 def music(request):
     return HttpResponse("Welcome to the Music App!")
 def welcome(req):

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Document</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/employee_form_styles.css' %}"
+    />
+  </head>
+  <body>
+    <h1>Django static page- Employee Modal form</h1>
+    <p>Click the button for the employee modal</p>
+    <button class="btn-primary" id="openModalBtn">+ Add Employee</button>
+    <div class="modal" id="employeeModal" aria-hidden="true">
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal-header">
+          <div class="modal-title" id="modalTitle">Add Employee</div>
+
+          <button
+            type="button"
+            class="close-float-btn"
+            id="closeModalBtn"
+            aria-label="Close dialog"
+          >
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <form id="employeeForm">
+          <div class="modal-body">
+            <!-- Left label right body-->
+            <label class="form-label" for="employee_name">Employee Name:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="employee_name"
+              name="employee_name"
+              placeholder="Employee Name"
+              required
+            />
+            <label class="form-label" for="employee_id">Employee ID:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="employee_id"
+              name="employee_id"
+              placeholder="Employee ID"
+              required
+            />
+            <label class="form-label" for="designation">Designation:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="designation"
+              name="employee_id"
+              placeholder="Designation"
+              required
+            />
+            <label class="form-label" for="email">Email address:</label>
+            <input
+              class="form-control"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email address:"
+              required
+            />
+            <label class="form-label" for="phone">Phone No:</label>
+            <input
+              class="form-control"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone No:"
+              required
+            />
+            <label class="form-label" for="employee_type">Employee Type:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="employee_type"
+              name="employee_type"
+              placeholder="Employee Type"
+              required
+            />
+            <label class="form-label" for="function">Function:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="function"
+              name="function"
+              placeholder="Function"
+              required
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-save" id="saveBtn">
+              Add Employee
+            </button>
+            <button type="button" class="btn" id="saveAddBtn">
+              Save & Add Another
+            </button>
+            {% comment %} <button type="button" class="btn" id="saveEditBtn">
+              Save & Continue Editing
+            </button> {% endcomment %}
+            {% comment %} <button type="button" class="btn btn-secondary" id="closeModalBtn">
+              Close
+            </button> {% endcomment %}
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      const modal = document.getElementById("employeeModal");
+      const openBtn = document.getElementById("openModalBtn");
+      const closeBtn = document.getElementById("closeModalBtn");
+      const form = document.getElementById("employeeForm");
+
+      function openModal() {
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.getElementById("employee_name").focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      openBtn.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      // click outside to closeBtn
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      // ESC to close
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("open"))
+          closeModal();
+      });
+
+      // Static button behavior
+      document.getElementById("saveBtn").addEventListener("click", () => {
+        alert("Saved");
+        closeModal();
+        form.reset();
+      });
+
+      document.getElementById("saveAddBtn").addEventListener("click", () => {
+        alert("Saved. Add another Employee!.");
+        form.reset();
+      });
+      document.getElementById("saveEBtn").addEventListener("click", () => {
+        alert("Saved. Continue Editing");
+        //keep open to continue editing
+      });
+    </script>
+  </body>
+</html>
