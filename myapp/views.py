@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 def home(req):
@@ -8,3 +8,5 @@ def music(request):
     return HttpResponse("Welcome to the Music App!")
 def welcome(req):
     return render(req, "welcome.html")
+def josn_view(request):
+    return JsonResponse({"message": "Hello!! JSON!!!"})

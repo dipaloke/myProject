@@ -22,4 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name="home"),
     path('music/',views.music, name="music"),
-    path('welcome/',views.welcome, name="welcome"),]
+    path('welcome/',views.welcome, name="welcome"),
+    path('json/',views.josn_view, name="json_view"),
+
+
+    ]
