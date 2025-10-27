@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'myapp.middleware.LoggingMiddleware', # custom
+    'myapp.middleware.IPLoggingMiddleware',
+    'myapp.middleware.ReqLoggingMiddleware',
 ]
 
 ROOT_URLCONF = 'myProject.urls'
