@@ -14,3 +14,5 @@ def josn_view(request):
     return JsonResponse({"message": "Hello!! JSON!!!"})
 def extended_josn_view(request):
     return JsonResponse({"message" : 'Hello, extended JSON!', "status" : 'success', "code" : 200})
+def extended2_josn_view(request):
+    return JsonResponse({"message" : 'Hello, JSON!'})
