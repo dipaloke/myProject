@@ -32,5 +32,7 @@ urlpatterns = [
     # query parameter
     path('search/', views.search_view, name="search_view"),
 
+    path('search_song/', views.song_search_view, name='song_search_view'),
+
 
     ]

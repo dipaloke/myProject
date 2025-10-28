@@ -19,9 +19,14 @@ def extended2_josn_view(request):
 
 # URL parameter
 def user_view(request, name):
-    return HttpResponse(f"Hello, {name}!")
+    color = request.GET.get('color','')
+    return HttpResponse(f"Hello, {name}!, Your favorite color, {color}")
 
 # query parameter
 def search_view(request):
     query = request.GET.get('q', '')
     return HttpResponse(f'You have searched for: {query}')
+
+def song_search_view(request):
+    song = request.GET.get('song', '')
+    return HttpResponse(f'You searched for: {song}')
