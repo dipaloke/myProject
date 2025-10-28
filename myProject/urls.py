@@ -29,7 +29,8 @@ urlpatterns = [
     path('extended_json2/',views.extended2_josn_view, name="extended2_josn_view"),
     # url parameter
     path('user/<str:name>', views.user_view, name="user_view"),
-
+    # query parameter
+    path('search/', views.search_view, name="search_view"),
 
 
     ]

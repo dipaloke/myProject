@@ -20,3 +20,8 @@ def extended2_josn_view(request):
 # URL parameter
 def user_view(request, name):
     return HttpResponse(f"Hello, {name}!")
+
+# query parameter
+def search_view(request):
+    query = request.GET.get('q', '')
+    return HttpResponse(f'You have searched for: {query}')
